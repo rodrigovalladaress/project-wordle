@@ -175,6 +175,22 @@ h1 {
   animation: slideUp 750ms cubic-bezier(0, 0.72, 0.24, 1.02);
   border-radius: 4px 4px 0px 0px;
   will-change: transform;
+  display: flex;
+}
+
+.banner-content {
+  flex: 4;
+}
+
+.banner-actions {
+  flex: 1;
+}
+
+.banner-button {
+  background: white;
+  color: black;
+  border-radius: 2px;
+  padding: 2px 12px;
 }
 
 .happy.banner {

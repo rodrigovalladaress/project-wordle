@@ -1,8 +1,9 @@
 import React from "react";
+import Banner from "../Banner/Banner";
 
-function HappyBanner({ numGuesses }) {
+function HappyBanner({ numGuesses, onRestart }) {
   return (
-    <div className="happy banner">
+    <Banner variant="happy" onRestart={onRestart}>
       <p>
         <strong>Congratulations!</strong> Got it in{" "}
         <strong>
@@ -10,7 +11,7 @@ function HappyBanner({ numGuesses }) {
         </strong>
         .
       </p>
-    </div>
+    </Banner>
   );
 }
 

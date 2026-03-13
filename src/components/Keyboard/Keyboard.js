@@ -6,7 +6,7 @@ const KEYS = Object.freeze([
   Object.freeze(["Z", "X", "C", "V", "B", "N", "M"]),
 ]);
 
-function Keyboard({ keyClass, onKeyPressed }) {
+function Keyboard({ keyClass, disabled, onKeyPressed }) {
   return (
     <div className="keyboard">
       {KEYS.map((row, i) => (
@@ -16,6 +16,7 @@ function Keyboard({ keyClass, onKeyPressed }) {
               key={key}
               className={`keyboard-key ${keyClass?.[key] || ""}`}
               onClick={() => onKeyPressed?.(key)}
+              disabled={disabled}
             >
               {key}
             </button>

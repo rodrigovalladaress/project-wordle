@@ -1,12 +1,13 @@
 import React from "react";
+import Banner from "../Banner/Banner";
 
-function SadBanner({ answer }) {
+function SadBanner({ answer, onRestart }) {
   return (
-    <div className="sad banner">
+    <Banner variant="sad" onRestart={onRestart}>
       <p>
         Sorry, the correct answer is <strong>{answer}</strong>.
       </p>
-    </div>
+    </Banner>
   );
 }
 
