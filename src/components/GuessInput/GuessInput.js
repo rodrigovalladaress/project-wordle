@@ -1,26 +1,22 @@
 import React from "react";
 
-function GuessInput({ disabled, onSubmit }) {
-  const [guess, setGuess] = React.useState("");
-
+function GuessInput({ length, disabled, value, onChange, onSubmit }) {
   /**
    *
    * @param {React.ChangeEvent<HTMLInputElement>} e
    */
   function handleChange(e) {
-    setGuess(e.target.value.toUpperCase());
+    onChange(e.target.value.toUpperCase());
   }
 
   /**
    *
-   * @param {React.FormEvent<HTMLFormElement>} e
+   * @param {React.SubmitEvent<HTMLFormElement>} e
    */
   function handleSubmit(e) {
     e.preventDefault();
 
-    onSubmit(guess);
-
-    setGuess("");
+    onSubmit(value);
   }
 
   return (
@@ -29,11 +25,11 @@ function GuessInput({ disabled, onSubmit }) {
       <input
         id="guess-input"
         type="text"
-        value={guess}
+        value={value}
         onChange={handleChange}
-        minLength={5}
-        maxLength={5}
-        pattern="[a-zA-Z]{5}"
+        minLength={length}
+        maxLength={length}
+        pattern={`[a-zA-Z]{${length}}`}
         title="5 letter word"
         required
         disabled={disabled}
